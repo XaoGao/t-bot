@@ -2,11 +2,10 @@ require_relative 'command'
 
 class StopCommand < Command
   def initialize(bot)
-    @name = CommandList::COMMANDS[:STOP]
-    super @name, bot
+    super CommandList::COMMANDS[:STOP], bot
   end
 
-  def logic(user, message)
-    send_message text: "Bye, #{user.full_name}"
+  def logic(message)
+    send_message text: "Bye"
   end
 end

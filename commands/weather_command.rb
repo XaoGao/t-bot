@@ -1,12 +1,10 @@
 require_relative 'command'
-
 class WeatherCommand < Command
   def initialize(bot)
-    @name = CommandList::COMMANDS[:WEATHER]
-    super @name, bot
+    super CommandList::COMMANDS[:WEATHER], bot
   end
 
   def call(message)
-    send_message message, 'test weather'
+    # send_message ext:
   end
 end
