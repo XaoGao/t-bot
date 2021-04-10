@@ -1,0 +1,3 @@
+db/*.bd
+.env
+.byebug_history
