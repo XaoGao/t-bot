@@ -9,6 +9,6 @@ class DateOfBirthCommand < Command
   def logic(message)
     user = User.find(chat_id: message.chat.id)
     user.update(action: 'add_date_of_birth')
-    send_message text: 'Введите свой адрес в формате dd/mm/yyyy'
+    send_message text: 'Введите свою дату рождения dd/mm/yyyy'
   end
 end

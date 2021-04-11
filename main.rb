@@ -2,7 +2,6 @@ require 'dotenv/load'
 require 'telegram/bot'
 require_relative 'command_handler'
 require_relative './helpers/command_list'
-require 'date'
 
 token = ENV['TELEGRAM_TOKEN']
 
