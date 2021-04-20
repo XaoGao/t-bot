@@ -15,6 +15,6 @@ end
 DB.create_table? :vacations do
   primary_key :id
   foreign_key :user_id, :users
-  DateTime :start_with
-  DateTime :until_the_end
+  DateTime :from
+  DateTime :by
 end

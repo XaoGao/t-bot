@@ -6,9 +6,13 @@ class VacationCommand < Command
   end
 
   def logic(message)
-    # user = User.find(chat_id: message.chat.id)
-    # user.update(action: 'choose_vacation')
-    answer = reply_keyboard [%w(show_vacation add_vacation remove_vacation)]
-    send_message text: 'Что именно вы хотите сделать?', reply_markup: answer
+    User.find(chat_id: message.chat.id).update(action: CommandList::COMMANDS[:CHOOSE_ACTION_VACATION])
+    send_message text: 'Что именно вы хотите сделать?', reply_markup: keyboard
+  end
+
+  private
+
+  def keyboard
+    reply_keyboard [%w(show_vacation add_vacation remove_vacation)]
   end
 end
